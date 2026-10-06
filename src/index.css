@@ -1,0 +1,241 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter-tight";
+@import "@fontsource-variable/inter-tight/wght-italic.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Miracle Labs theme. Values come straight from the v6 identity kit; the rules for using them
+ * (one gradient surface per screen, violet as the only UI color) live in ../DESIGN.md.
+ */
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Inter Tight Variable', ui-sans-serif, system-ui, sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+
+    /* Miracle Labs extras */
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-ink: var(--ml-ink);
+    --color-ml-violet: var(--ml-violet);
+    --color-ml-magenta: var(--ml-magenta);
+    --color-ml-orange: var(--ml-orange);
+}
+
+/*
+ * Brand values. v6 hues are used only by the mark, the brand surface, the orbit CTA border and charts
+ * (see DESIGN.md); everything else in the UI is neutral.
+ */
+:root {
+    --ml-ink: #0B0B0E;
+    --ml-violet: #7B2CFF;
+    --ml-magenta: #E0306E;
+    --ml-orange: #FF7A3D;
+    --ml-orbit: linear-gradient(45deg, #7B2CFF 0%, #E0306E 55%, #FF7A3D 100%);
+}
+
+/* Light: neutral grey with black as the primary action */
+:root {
+    --background: #F7F7F8;
+    --foreground: #0B0B0E;
+    --card: #FFFFFF;
+    --card-foreground: #0B0B0E;
+    --popover: #FFFFFF;
+    --popover-foreground: #0B0B0E;
+    --primary: #111114;
+    --primary-foreground: #FFFFFF;
+    --secondary: #EEEEF0;
+    --secondary-foreground: #0B0B0E;
+    --muted: #EEEEF0;
+    --muted-foreground: #5F5F69;
+    --accent: #EEEEF0;
+    --accent-foreground: #0B0B0E;
+    --destructive: #C62828;
+    --success: #127842;
+    --warning: #8A5A00;
+    --border: #E4E4E8;
+    --input: #D4D4DA;
+    --ring: #71717B;
+    --chart-1: #7B2CFF;
+    --chart-2: #E0306E;
+    --chart-3: #FF7A3D;
+    --chart-4: #3F3F46;
+    --chart-5: #A1A1AB;
+    --radius: 0.75rem;
+    --sidebar: #FFFFFF;
+    --sidebar-foreground: #0B0B0E;
+    --sidebar-primary: #111114;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #EEEEF0;
+    --sidebar-accent-foreground: #0B0B0E;
+    --sidebar-border: #E4E4E8;
+    --sidebar-ring: #71717B;
+}
+
+/* Dark: near-black, cool and almost chroma-free */
+.dark {
+    --background: #0B0B0E;
+    --foreground: #F4F4F6;
+    --card: #131317;
+    --card-foreground: #F4F4F6;
+    --popover: #18181D;
+    --popover-foreground: #F4F4F6;
+    --primary: #F4F4F6;
+    --primary-foreground: #0B0B0E;
+    --secondary: #1F1F25;
+    --secondary-foreground: #F4F4F6;
+    --muted: #1F1F25;
+    --muted-foreground: #A1A1AB;
+    --accent: #1F1F25;
+    --accent-foreground: #F4F4F6;
+    --destructive: #F26B6B;
+    --success: #3CC97E;
+    --warning: #F5B83D;
+    --border: rgb(255 255 255 / 9%);
+    --input: rgb(255 255 255 / 15%);
+    --ring: #8E8E99;
+    --chart-1: #9A62FF;
+    --chart-2: #E0306E;
+    --chart-3: #FF7A3D;
+    --chart-4: #D4D4DA;
+    --chart-5: #5F5F69;
+    --sidebar: #131317;
+    --sidebar-foreground: #F4F4F6;
+    --sidebar-primary: #F4F4F6;
+    --sidebar-primary-foreground: #0B0B0E;
+    --sidebar-accent: #1F1F25;
+    --sidebar-accent-foreground: #F4F4F6;
+    --sidebar-border: rgb(255 255 255 / 9%);
+    --sidebar-ring: #8E8E99;
+}
+
+/* Gradient border on a near-black fill: the one brand-moment CTA. A gradient fill fails contrast with any label color. */
+@utility orbit-ring {
+    background-image: linear-gradient(var(--ml-ink), var(--ml-ink)), var(--ml-orbit);
+    background-origin: border-box;
+    /* !important: Button's base `bg-clip-padding` would otherwise clip the gradient border away */
+    background-clip: padding-box, border-box !important;
+    border-color: transparent;
+}
+/*
+ * The v6 Primary board composition, toned down: same three hues and positions at low alpha, so the
+ * surface still reads as near-black. Shifted right so the text side stays dark.
+ * Always a dark surface: pair it with the `dark` class so children use dark tokens in both themes.
+ */
+@utility bg-orbit-glow {
+    background-color: var(--ml-ink);
+    background-image:
+        radial-gradient(40% 60% at 92% 10%, rgb(255 122 61 / 0.16) 0%, transparent 70%),
+        radial-gradient(36% 55% at 74% 62%, rgb(224 48 110 / 0.14) 0%, transparent 72%),
+        radial-gradient(50% 65% at 35% 120%, rgb(123 44 255 / 0.24) 0%, transparent 70%);
+}
+
+/*
+ * The v6 Primary board at full strength (same stops and positions as FInal Logo v6/build.mjs, on v6 ink).
+ * For covers only: title slides, document covers, video intro/outro, social and OG images. Never UI chrome.
+ */
+@utility bg-orbit-cover {
+    background-color: #160A22;
+    background-image:
+        radial-gradient(60% 55% at 78% 22%, #FF7A3D 0%, transparent 70%),
+        radial-gradient(70% 60% at 18% 85%, #7B2CFF 0%, transparent 70%),
+        radial-gradient(50% 50% at 50% 50%, #E0306E 0%, transparent 75%);
+}
+
+/*
+ * Film grain from the v6 kit (feTurbulence). The color matrix triples the noise contrast
+ * (grayscale, centered on 50%) so a low opacity reads as grain without lifting the black level.
+ * The noise sits in ::before, between the element's background and its children.
+ */
+@utility bg-grain {
+    position: relative;
+    isolation: isolate;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: var(--grain-opacity, 0.09);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 -1 1 1 1 0 -1 1 1 1 0 -1 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 240px 240px;
+    }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground antialiased;
+    letter-spacing: -0.005em;
+    }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+    }
+  html {
+    @apply font-sans;
+    }
+  h1, h2, h3, h4 {
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    }
+}
+
+/*
+ * Touch: 44px minimum targets. Unlayered on purpose so it beats the components' utility classes
+ * (e.g. the checkbox's `after:-inset-y-2` hit area). Buttons are matched by data-variant/data-size
+ * because Radix triggers with asChild replace their data-slot.
+ */
+@media (pointer: coarse) {
+    [data-variant][data-size], [data-slot="select-trigger"], [data-slot="tabs-trigger"],
+    [data-slot="input"], [data-slot="dropdown-menu-item"], [data-slot="select-item"] {
+        min-height: 44px;
+    }
+    [data-variant][data-size^="icon"] {
+        min-width: 44px;
+    }
+    [data-slot="checkbox"]::after, [data-slot="switch"]::after {
+        inset: -14px;
+    }
+}

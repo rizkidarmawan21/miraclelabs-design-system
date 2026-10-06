@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><defs>
+<radialGradient id="ga" cx=".78" cy=".22" r=".6"><stop offset="0" stop-color="#FF7A3D"/><stop offset=".7" stop-color="#FF7A3D" stop-opacity="0"/></radialGradient>
+<radialGradient id="gb" cx=".18" cy=".85" r=".65"><stop offset="0" stop-color="#7B2CFF"/><stop offset=".7" stop-color="#7B2CFF" stop-opacity="0"/></radialGradient>
+<radialGradient id="gc" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E0306E"/><stop offset=".75" stop-color="#E0306E" stop-opacity="0"/></radialGradient>
+</defs><rect width="1024" height="1024" rx="230" fill="#160A22"/><rect width="1024" height="1024" rx="230" fill="url(#gb)"/><rect width="1024" height="1024" rx="230" fill="url(#gc)"/><rect width="1024" height="1024" rx="230" fill="url(#ga)"/><path fill="#fff" transform="translate(212,212) scale(2.54) translate(-2,-2)" d="M230.35,91.38 A114,114 0 1 1 148.62,9.65 A58,58 0 0 1 128.11,50.47 A70,70 0 1 0 189.53,111.89 A58,58 0 0 1 230.35,91.38Z M186,14 C191.6,46 194,48.4 226,54 C194,59.6 191.6,62 186,94 C180.4,62 178,59.6 146,54 C178,48.4 180.4,46 186,14Z"/></svg>
